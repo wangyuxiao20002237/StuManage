@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生-选课中心</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <a class="btn btn-success"href="/stu/" role="button">返回</a>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>课程编号</th>
+            <th>课程名称</th>
+            <th>开课年级</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td><a class="btn btn-primary" href="#" role="button">选课</a></td>
+        </tr>
+        {% for item in courses %}
+        <tr>
+            <td>{{ item.courseNo }}</td>
+            <td>{{ item.courseName }}</td>
+            <td>{{ item.courseGrade }}</td>
+            <td><a class="btn btn-primary" href="/stu_select_course_submit/?courseNo={{ item.courseNo }}" role="button">选课</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>课程编号</th>
+            <th>课程名称</th>
+            <th>开课年级</th>
+            <th>操作</th>
+        </tr>
+        {% for item in selected_courses %}
+        <tr>
+            <td>{{ item.courseNo }}</td>
+            <td>{{ item.courseName }}</td>
+            <td>{{ item.courseGrade }}</td>
+            <td><a class="btn btn-danger" href="#" role="button">退课</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

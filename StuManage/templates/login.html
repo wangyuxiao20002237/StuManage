@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>用户输入：</h1>
+    <form action="/login/" method="post">
+        <input type="radio" name="usertype" value="1"> 管理员 <br/>
+        <input type="radio" name="usertype" value="2" checked> 学生 <br/>
+        用户名：<input type="text" name="username" /><br/>
+        密码：<input type="password" name="password" /><br/>
+        <input type="submit" value="提交"/>
+        <br>
+        {{ error_msg }}
+    </form>
+    <script>
+        function myFunction() {
+            window.location.href = '#';
+        }
+    </script>
+</body>
+</html>

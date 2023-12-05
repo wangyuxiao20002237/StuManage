@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1 style="color: black">Hello World!</h1>
+    <span style="color: red">{{ errmsg }}</span>
+    {% for item in stu %}
+        <div>{{ item.stuNo }}</div>
+        <div>{{ item.stuName }}</div>
+    {% endfor %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            console.log("aaaaaaaaaaaaaaaaaaaaa");
+        })
+    </script>
+</body>
+</html>
