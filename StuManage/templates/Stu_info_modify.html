@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生-个人信息-修改</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <a class="btn btn-success" href="/stu_info/" role="button">返回</a>
+    <form method="post" action='/stu_info_modify/'>
+        <div class="form-group">
+            <label for="stuNo">学号</label>
+            <input type="text" class="form-control" name="stuNo" value="{{ stu.stuNo }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="stuName">姓名</label>
+            <input type="text" class="form-control" name="stuName" value="{{ stu.stuName }}">
+        </div>
+        <div class="form-group">
+            <label for="stuAge">年龄</label>
+            <input type="text" class="form-control" name="stuAge" value="{{ stu.stuAge }}">
+        </div>
+        <div class="form-group">
+            <label for="stuSex">性别</label>
+            <input type="text" class="form-control" name="stuSex" value="{{ stu.stuSex }}">
+        </div>
+        <div class="form-group">
+            <label for="stuGrade">年级</label>
+            <input type="text" class="form-control" name="stuGrade" value="{{ stu.stuGrade }}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="stuGrade">密码</label>
+            <input type="text" class="form-control" name="password" value="{{stu.password}}">
+        </div>
+
+        <input type='submit' value='提交'>
+      </form>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

@@ -7,11 +7,10 @@ from StuManageApp.service import CourseScore_Service # 自定义服务
 from StuManageApp.service import Student_Service
 from StuManageApp.service import Course_Service
 from StuManageApp.service import Admin_Service
-# Create your views here.
 
-# 这一部分的功能已经全部转移到views文件夹下的.py文件中，不用管这一部分了，可以当做参考
-
-def test(request):
-    stu_obj = models.Student.objects.all().values()
-    return render(request, 'test.html', {'stu':stu_obj})
-
+@csrf_exempt
+def admin_course_info(request): # 管理员查看课程基本信息
+    if request.method == 'GET':
+        course_obj = Course_Service.query_course_all()
+ 
+    return render(request, 'Admin_course_info.html', {'courses': course_obj})
