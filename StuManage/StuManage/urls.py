@@ -16,27 +16,43 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from StuManageApp import views
+from StuManageApp.view import login
+from StuManageApp.view import Student
+from StuManageApp.view import Admin_stu
+from StuManageApp.view import Admin_course
+from StuManageApp.view import Admin_score
+
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
 
     path('test/', views.test), # 测试页面
 
-    path('', views.index),
-    path('login/', views.login),
+    # 登录模块
+    path('', login.index),
+    path('index/', login.index),
+    path('login/', login.login),
 
-    path('admin/', views.admin),
-    path('admin_stu_info/', views.admin_stu_info),
-    path('admin_stu_info_add/', views.admin_stu_info_add),
-    path('admin_stu_delete/', views.admin_stu_delete),
-    path('admin_course_info/', views.admin_course_info),
-    path('admin_course_score/', views.admin_course_score), # 查看所有课程的成绩列表
-    path('admin_course_score_stu/', views.admin_course_score_stu), # 查看该门课下的学生成绩
-    path('admin_course_score_stu_add/', views.admin_course_score_stu_add),
+    # 管理员主页、管理员学生基本信息管理模块
+    path('admin/', Admin_stu.admin), #管理员主页
+    path('admin_stu_info/', Admin_stu.admin_stu_info), #以下是管理员学生基本信息管理模块
+    path('admin_stu_info_add/', Admin_stu.admin_stu_info_add),
+    path('admin_stu_info_modify/', Admin_stu.admin_stu_info_modify),
+    path('admin_stu_delete/', Admin_stu.admin_stu_delete),
 
-    path('stu/', views.stu),
-    path('stu_info/', views.stu_info),
-    path('stu_select_course/', views.stu_select_course),
-    path('stu_select_course_submit/', views.stu_select_course_submit),
-    path('stu_score/', views.stu_score)
+
+    path('admin_course_info/', Admin_course.admin_course_info), #管理员课程基本信息管理模块
+
+    # 管理员成绩管理模块
+    path('admin_course_score/', Admin_score.admin_course_score), # 查看所有课程的成绩列表
+    path('admin_course_score_stu/', Admin_score.admin_course_score_stu), # 查看该门课下的学生成绩
+    path('admin_course_score_stu_add/', Admin_score.admin_course_score_stu_add),
+
+    # 学生全部功能模块
+    path('stu/', Student.stu),
+    path('stu_info/', Student.stu_info),
+    path('stu_info_modify/', Student.stu_info_modify),
+    path('stu_select_course/', Student.stu_select_course),
+    path('stu_select_course_submit/', Student.stu_select_course_submit),
+    path('stu_score/', Student.stu_score)
 ]

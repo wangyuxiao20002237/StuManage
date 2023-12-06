@@ -7,32 +7,31 @@
 </head>
 <body>
     <a class="btn btn-success"href="/admin_stu_info/" role="button">返回</a>
-    <form method="post" action='/admin_stu_info_add/'>
+    <form method="post" action='/admin_stu_info_modify/'>
         <div class="form-group">
             <label for="stuNo">学生学号</label>
-            <input type="text" class="form-control" name="stuNo">
+            <input type="text" class="form-control" name="stuNo" value="{{stu.stuNo}}" readonly>
         </div>
         <div class="form-group">
             <label for="stuName">学生姓名</label>
-            <input type="text" class="form-control" name="stuName">
+            <input type="text" class="form-control" name="stuName" value="{{stu.stuName}}">
         </div>
         <div class="form-group">
             <label for="stuAge">学生年龄</label>
-            <input type="text" class="form-control" name="stuAge">
+            <input type="text" class="form-control" name="stuAge" value="{{stu.stuAge}}">
         </div>
         <div class="form-group">
             <label for="stuSex">学生性别</label>
-            <input type="text" class="form-control" name="stuSex">
+            <input type="text" class="form-control" name="stuSex" value="{{stu.stuSex}}">
         </div>
         <div class="form-group">
             <label for="stuGrade">学生年级</label>
-            <input type="text" class="form-control" name="stuGrade">
+            <input type="text" class="form-control" name="stuGrade" value="{{stu.stuGrade}}">
         </div>
         <div class="form-group">
-            <label for="password">密码</label>
-            <input type="text" class="form-control" name="password">
+            <label for="stuGrade">密码</label>
+            <input type="text" class="form-control" name="password" value="{{stu.password}}">
         </div>
-
         <input type='submit' value='提交'>
       </form>
 

@@ -33,7 +33,10 @@
             <td>{{ item.stuAge }}</td>
             <td>{{ item.stuSex }}</td>
             <td>{{ item.stuGrade }}</td>
-            <td><a class="btn btn-danger" href="/admin_stu_delete/?stuNo={{ item.stuNo }}" role="button">注销</a></td>
+            <td>
+                <a class="btn btn-danger" href="/admin_stu_delete/?stuNo={{ item.stuNo }}" role="button">注销</a>
+                <a class="btn btn-warning" href="/admin_stu_info_modify/?stuNo={{ item.stuNo }}" role="button">修改信息</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
