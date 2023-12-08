@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>管理员-课程成绩信息管理-登入成绩</title>
+    <title>管理员-学生基本信息管理-添加学生</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 <body>
@@ -15,29 +15,37 @@
     <div class="container-fluid">
         <div class="row">
 			<div class="col-md-12">
-                <a class="btn btn-success btn-lg" href="/admin_course_score_stu/?courseNo={{ courseNo }}" role="button">返回</a>
+                <a class="btn btn-success btn-lg"href="/admin_stu_info/" role="button">返回</a>
             </div>
         </div>
         <br>
         <div class="page-header">
-            <h1>登入成绩信息</h1>
+            <h1>修改学生信息</h1>
         </div>
-        <form method="post" action='/admin_course_score_stu_add/'>
-            <div class="form-group">
-                <label for="courseNo">课程编号</label>
-                <input type="text" class="form-control" name="courseNo" value="{{ courseNo }}" readonly>
-            </div>
+        <form method="post" action='/admin_stu_info_modify/'>
             <div class="form-group">
                 <label for="stuNo">学生学号</label>
-                <input type="text" class="form-control" name="stuNo" value="{{ stuNo }}" readonly>
+                <input type="text" class="form-control" name="stuNo" value="{{stu.stuNo}}" readonly>
             </div>
             <div class="form-group">
-                <label for="stuScore">学生成绩</label>
-                <input type="text" class="form-control" name="stuScore">
+                <label for="stuName">学生姓名</label>
+                <input type="text" class="form-control" name="stuName" value="{{stu.stuName}}">
             </div>
             <div class="form-group">
-                <label for="courseGrade">开课年级</label>
-                <input type="text" class="form-control" name="courseGrade" value="{{ courseGrade }}" readonly>
+                <label for="stuAge">学生年龄</label>
+                <input type="text" class="form-control" name="stuAge" value="{{stu.stuAge}}">
+            </div>
+            <div class="form-group">
+                <label for="stuSex">学生性别</label>
+                <input type="text" class="form-control" name="stuSex" value="{{stu.stuSex}}">
+            </div>
+            <div class="form-group">
+                <label for="stuGrade">学生年级</label>
+                <input type="text" class="form-control" name="stuGrade" value="{{stu.stuGrade}}">
+            </div>
+            <div class="form-group">
+                <label for="stuGrade">密码</label>
+                <input type="text" class="form-control" name="password" value="{{stu.password}}">
             </div>
             <div class="col-md-2 col-md-offset-5">
                 <input class="btn btn-warning btn-lg btn-block" type='submit' value='提交' role="button">
@@ -47,7 +55,6 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-
     </script>
 </body>
 </html>
