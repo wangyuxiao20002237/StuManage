@@ -11,3 +11,5 @@ C：urls.py定义了路由，即前端请求交给哪个视图函数进行处理
 对应于MVC设计模式
 
 另外servive文件夹下自定义了一些函数，提供给视图函数进行调用
+
+自己下载后，需要安装python django相关的包，并在settings.py中修改数据库相关配置“DATABASE”中的内容
